@@ -1,0 +1,28 @@
+# Name
+
+# Description
+
+Traverse directory recursively and get array of Hapi plugins ready to feed Hapi's
+[`server.register(plugins, [options])`](https://github.com/hapijs/hapi/blob/master/API.md#server.register()) function.
+
+# Synopsis
+
+```
+const getHapiPlugins = require("hapi-plugins-dir");
+const plugins = getHapiPlugins();
+
+await server.register(plugins); // Hapi server object...
+```
+
+# Details
+
+* Traverses recursively given directory. (Defaults to caller file's directory)
+* If a plugin isn't specified in `plugins` key, it will be required using filename.
+* If a directory name starts with `@`, it is treated as package scope. (i.e. `plugins/@name/some-plugin.js` -> `@name/some-plugin`)
+* Files can be ordered using number prefixes appended dot or dash (. or -). Numbers are stripped when requesting plugin. (i.e. `plugins/001-hapi-auth-basic` requires `hapi-auth-basic`).
+* Scope directory names can be prefixed with numbers too. (i.e. `plugins/001-@scope/001-module.js` requires `@scope/module`).
+* Result array must be registered using [`server.register(plugins, [options])`](https://github.com/hapijs/hapi/blob/master/API.md#server.register()). It is not automatically registered.
+
+
+# API
+{{>main~}}
