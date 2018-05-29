@@ -7,12 +7,25 @@ Traverse directory recursively and get array of Hapi plugins ready to feed Hapi'
 
 # Synopsis
 
-```
+**Plugins in same directory with file**
+```js
 const getHapiPlugins = require("hapi-plugins-dir");
 const plugins = getHapiPlugins();
-
 await server.register(plugins); // Hapi server object...
 ```
+
+**Custom directory**
+```js
+const getHapiPlugins = require("hapi-plugins-dir"); // May be relative or absolute
+const plugins = getHapiPlugins({ dir: "plugins" });
+await server.register(plugins); // Hapi server object...
+```
+
+**With [haute-couture](https://github.com/hapipal/haute-couture): plugins/index.js**
+```js
+module.exports = require("hapi-plugins-dir")();
+```
+
 
 # Details
 
