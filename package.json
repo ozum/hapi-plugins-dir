@@ -1,6 +1,6 @@
 {
   "name": "hapi-plugins-dir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Traverse directory recursively and get array of Hapi plugins ready to feed Hapi's server.register(plugins, [options]) function.",
   "main": "lib/index.js",
   "repository": "github:ozum/hapi-plugins-dir",
@@ -9,8 +9,7 @@
     "test": "jest",
     "posttest": "eslint lib --fix --ignore-path .gitignore",
     "format": "prettier '**/*.js' --write",
-    "preversion":
-      "jest --coverage && npm run posttest && npm run build:doc && git add README.md",
+    "preversion": "jest --coverage && npm run posttest && npm run build:doc && git add README.md",
     "postversion": "git push && git push --tags && npm publish"
   },
   "author": "Özüm Eldoğan",
