@@ -1,4 +1,4 @@
-# Name
+# hapi-plugins-dir
 
 # Description
 
