@@ -1,6 +1,6 @@
 {
   "name": "hapi-plugins-dir",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Traverse directory recursively and get array of Hapi plugins ready to feed Hapi's server.register(plugins, [options]) function.",
   "main": "lib/index.js",
   "repository": "github:ozum/hapi-plugins-dir",

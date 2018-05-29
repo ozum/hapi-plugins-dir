@@ -16,8 +16,8 @@ await server.register(plugins); // Hapi server object...
 
 **Custom directory**
 ```js
-const getHapiPlugins = require("hapi-plugins-dir"); // May be relative or absolute
-const plugins = getHapiPlugins({ dir: "plugins" });
+const getHapiPlugins = require("hapi-plugins-dir");
+const plugins = getHapiPlugins({ dir: "plugins" }); // Dir may be relative or absolute
 await server.register(plugins); // Hapi server object...
 ```
 
